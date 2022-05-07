@@ -1,0 +1,29 @@
+.promotion_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.promotion_content {
+	font-size: calc( 0.2vw  + 13px);
+}
+
+.promotion_period {
+	color: red;
+	font-size: calc( 0.2vw  + 14px);
+	font-weight: 700;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.promotion_img {
+	display: flex;
+}
+
+img {
+	display: block;
+    width: 100%;
+ 	background-size: contain;
+ 	max-height: 450px;
+ 	object-fit: cover;
+}

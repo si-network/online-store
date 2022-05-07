@@ -1,0 +1,32 @@
+{% extends "default.twig" %}
+
+{% block styles %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/css/promotions.css">
+{% endblock %}
+
+{% block title %}Акции{% endblock %}
+
+{% block content %}
+	<div class="container">
+		
+		<div class="promotions">
+			{% for promo in promotions %}
+			<div class="promo" id="{{ promo.getId }}">
+				<div class="promo__img">
+					<a href="/promotions/{{ promo.getId }}">
+						<img src="{{ promo.getImagePath }}" alt="">
+					</a>
+				</div>
+				<div class="promo__title">
+					<a href="/promotions/{{ promo.getId }}">
+						<p class="promo__title__head">{{ promo.getTitle }}</p>
+					</a>
+					<p class="promo__title__foot">{{ promo.getTitleAddition }}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+{% endblock %}

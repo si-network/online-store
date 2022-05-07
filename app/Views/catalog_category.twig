@@ -1,0 +1,59 @@
+{% extends "catalog.twig" %}
+
+{% block title %}{{ category.title }}{% endblock %}
+{% block catalog_navigation %}
+<div class="categories_wrapper">
+	<div class="categories_swapper">
+		<span>Все категории</span>
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</div>
+	{{ parent() }}
+</div>
+
+{% if childs %}
+<div class="catalog_categories childs_categories">
+	{% for child in childs %}
+	<a href="/catalog/{{ child.getName }}"  id="{{ child.getId }}" parent_id="{{ child.getParentId }}">
+		<div class="category_wrapper" >
+			<div class="category" id="{{ child.getId }}" parent_id="{{ child.getParentId }}">{{ child.getTitle }}</div>
+			<div class="catalog_categories childs" id="{{ child.getId }}"></div>
+		</div>
+	</a>
+	{% endfor %}
+</div>
+{% endif %}
+
+{% if filters %}
+<div class="category_filters">
+	<div class="category_filters_wrapper">
+	{% include 'catalog_filters.twig' %}
+	</div>
+</div>
+{% endif %}
+
+{% endblock %}
+{% block catalog_content %}
+<div class="childs_categories_block">
+	{% for child in childs %}
+	<div class="child_category_block">
+		<a href="/catalog/{{ child.getName }}">
+			<div class="child_category_img">
+				<img src="{{ child.getImagePath }}" alt="">
+			</div>
+		</a>
+		<div>
+			<a href="/catalog/{{ child.getName }}"  id="{{ child.getId }}" parent_id="{{ child.getParentId }}">
+				<div>
+					<div class="child_category_title" id="{{ child.getId }}" parent_id="{{ child.getParentId }}">{{ child.getTitle }}</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% if products %}
+<div class="showcase-grid">
+{% include 'catalog_products.twig' %}
+</div>
+{% endif %}
+{% endblock %}

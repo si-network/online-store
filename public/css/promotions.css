@@ -1,0 +1,39 @@
+.promotions {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+}
+
+.promo {
+	height: 250px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.promo__img {
+	height: 70%;
+	background-color: grey;
+}
+
+.promo__img img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.promo__title {
+	height: 30%;
+	padding: 10px 0;
+	box-sizing: border-box;
+}
+
+.promo__title__head {
+	color: #D6569B;
+	font-weight: 700;
+	display: inline;
+}
+
+.promo__title__foot {
+	color: #5C5C5C;
+	margin-top: 8px;
+}

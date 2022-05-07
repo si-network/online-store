@@ -1,0 +1,35 @@
+{% extends "default.twig" %}
+
+{% block styles %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/css/about.css">
+{% endblock %}
+{% block title %}{{ content['head_title'] }}{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="about">
+			<h3 class="about__title">{{ content['page_title'] }}</h3>
+			<div class="about__items">
+				{% for item in items %}
+				<div class="about__item" id="{{ item.getId }}">
+					<div class="about__item__icon"><i class="fa-3x fa fa-{{ item.getIconName }}" aria-hidden="true"></i></div>
+					<div class="about__item__title">{{ item.getTitle }}</div>
+					<div class="about__item__description">{{ item.getDescription }}</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="mobile_app">
+				<div class="mobile_app__content">
+					<h3>{{ content['mobile_app_title'] }}</h3>
+					<p>{{ content['mobile_app_content'] }}</p>
+					<div>
+						<button type="submit">Скачать</button>
+					</div>
+				</div>
+				<div class="mobile_app__image">
+					<img src="{{ content['mobile_image_path'] }}" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+@font-face {
+	font-family: 'Intellect';
+	src: url('IntellectCYR/19187.eot');
+	src: local('☺'), url('IntellectCYR/19187.woff') format('woff'), url('IntellectCYR/19187.ttf') format('truetype'), url('IntellectCYR/19187.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NSC-Regular';
+	src: url('NamukoSansCYR-Regular/NamukoSansCYR-Regular.eot');
+	src: local('☺'), url('NamukoSansCYR-Regular/NamukoSansCYR-Regular.woff') format('woff'), url('NamukoSansCYR-Regular/NamukoSansCYR-Regular.ttf') format('truetype'), url('NamukoSansCYR-Regular/NamukoSansCYR-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Voguer';
+	
+	src:  url('VoguerSansFree/VoguerSansFree.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'New';
+	src: url('New/19013.eot');
+	src: local('☺'), url('New/19013.woff') format('woff'), url('New/19013.ttf') format('truetype'), url('New/19013.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'JI';
+	src: url('JI/JI.eot');
+	src: local('☺'), url('JI.woff') format('woff'), url('JI/JI.ttf') format('truetype'), url('JI/JI.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bahamas';
+	src: url('BahamasHeavy/BahamasHeavy.eot');
+	src: local('☺'), url('BahamasHeavy/BahamasHeavy.woff') format('woff'), url('BahamasHeavy/BahamasHeavy.ttf') format('truetype'), url('BahamasHeavy/BahamasHeavy.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aquaguy';
+	src: url('ar_Aquaguy/ar_Aquaguy.eot');
+	src: local('☺'), url('ar_Aquaguy/ar_Aquaguy.woff') format('woff'), url('ar_Aquaguy/ar_Aquaguy.ttf') format('truetype'), url('ar_Aquaguy/ar_Aquaguy.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'te';
+	src: url('fonts/te.eot');
+	src: local('☺'), url('te/te.woff') format('woff'), url('te/te.ttf') format('truetype'), url('te/te.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,10 @@
+{% for filter in filters %}
+{% set i = 0 %}
+<div class="filter_title">{{ filter[i]['title'] }}</div>
+{% for i in range(0,  filter|length - 1  ) %}
+	 <p class="filter_item" {{ filter[i]['count_value'] == 0 ? 'style="opacity: 0.5;" ' : '' }}>
+	 	<input class="filter_checkbox" type="checkbox" name="{{ filter[i]['feature_name'] }}" value="{{ filter[i]['col_value'] }}" {{ filter[i]['count_value'] == 0 ? ' disabled ' : '' }}> {{ filter[i]['col_value'] }} {{ filter[i]['unit'] ? filter[i]['unit'] : '' }} 
+	 	<span>({{ filter[i]['count_value'] }})</span>
+	 </p>
+{% endfor %}
+{% endfor %}

@@ -1,0 +1,44 @@
+{% extends "default.twig" %}
+
+{% block styles %}
+{{ parent() }}
+<link rel="stylesheet" href="/css/catalog.css">
+{% endblock %}
+{% block scriptsStart %}
+{{ parent() }}
+<script src="/js/catalog.js"></script>
+{% endblock %}
+{% block title %}Каталог{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="catalog">
+		<div class="catalog_navigation">
+		{% block catalog_navigation %}
+			<div class="catalog_categories cc">
+				{% for category in categories %}
+				{% if category.getParentId %}
+				<a href="/catalog/{{ category.getName }}" class="category_wrapper_link" id="{{ category.getId }}" parent_id="{{ category.getParentId }}">
+					<div class="category_wrapper" >
+						<div class="category child_category" id="{{ category.getId }}" parent_id="{{ category.getParentId }}">{{ category.getTitle }}</div>
+						<div class="catalog_categories childs" id="{{ category.getId }}"></div>
+					</div>
+				</a>
+				{% else %}
+				<a href="/catalog/{{ category.getName }}" class="category_wrapper_link" id="{{ category.getId }}">
+		        	<div class="category_wrapper">
+		        		<div class="category" id="{{ category.getId }}">{{ category.getTitle }}</div>
+		        		<div class="catalog_categories childs" id="{{ category.getId }}"></div>
+		        	</div>
+	        	</a>	
+				{% endif %}
+			    {% endfor %}
+			</div>
+		{% endblock %}
+		</div>
+		<div class="catalog_content">
+		{% block catalog_content %}
+		{% endblock %}
+		</div>
+	</div>
+</div>
+{% endblock %}

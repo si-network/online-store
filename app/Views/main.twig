@@ -1,0 +1,113 @@
+{% extends "default.twig" %}
+
+{% block title %}TECHNOSTORE - магазин компьютерной техники{% endblock %}
+
+{% block content %}
+<!-- BANNER -->
+	<section class="banner">
+		<div class="container">
+			<div class="banner-block owl-carousel">
+				<img class="item" src="/images/main/banner1.png" alt="">
+				<img class="item" src="/images/main/banner2.png" alt="">
+				<img class="item" src="/images/main/banner3.png" alt="">
+			</div>
+		</div>
+	</section>
+<!-- END BANNER -->
+
+<!-- SALES -->
+	<section id="sales">
+		<div class="container">
+			<h2>
+				<a href="/discounts">Товары по скидке</a>
+			</h2>
+			<div id="sales__carousel" class="owl-carousel">
+				{% for product in discountProducts %}
+				<a href="/products/{{ product.getId }}">
+					<div class="sales__item">
+						<div class="sales__img item__img">
+							<div class="sales__logo">-{{ product.getDiscount }}%</div>
+							<img src="/images/catalog/products/{{ product.getId }}/main.png" alt="">
+						</div>
+						<div class="sales__service item__service">
+							<div class="sales__about item__about">{{ product.getTitle }}</div>
+							<div class="sales__footer item__footer">
+								<div class="sales__price"><div class="line_olp_price"></div>{{ product.getPrice }}р.</div>
+								<div class="sales__price discount__price"><b>{{ product.getDiscountPrice }}р.</b></div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+<!-- END HIT SALES -->
+
+<!-- SHOWCASE -->
+	<section id="showcase">
+		<div class="container">
+			<h2>Популярные товары</h2>
+			<div class="showcase-grid">
+				{% for product in popularProducts %}
+				{% include 'catalog_product.twig' %}
+				{% endfor %}
+			</div>
+			<div class="show_more" count-products="{{ popularProducts|length }}">
+				<span>ПОКАЗАТЬ ЕЩЁ</span>
+				<i class="fa fa-angle-double-down fa-4x" aria-hidden="true"></i>
+			</div>
+		</div>
+	</section>
+<!-- END SHOWCASE -->
+
+<!-- NEW PRODUCTS -->
+	<section id="new-products">
+		<div class="container">
+			<h2>
+				<a href="/new_goods">Новинки</a>
+			</h2>
+			{% set num = 2 %}
+			{% for product in newProducts %}
+			<div class="new-product">
+				{% if num % 2 == 0 %}
+				<div class="new-product__left">
+					<div class="new-product__img">
+						<img src="/images/catalog/products/{{ product.getId }}/main.png" alt="">
+					</div>
+				</div>
+				<div class="new-product__right">
+					<div class="new-product__title">
+						<p>{{ product.getTitle }}</p>
+					</div>
+				</div>
+				{% else %}
+				<div class="new-product__right">
+					<div class="new-product__title">
+						<p>{{ product.getTitle }}</p>
+					</div>
+				</div>
+				<div class="new-product__left">
+					
+					<div class="new-product__img">
+						<img src="/images/catalog/products/{{ product.getId }}/main.png" alt="">
+					</div>
+				</div>
+				{% endif %}
+				{% set num = num + 1 %}
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+<!-- END NEW PRODUCTS -->
+{% endblock %}
+
+{% block scripts %}
+
+<!-- JS PLUGIN OwlCarousel2 -->
+	<script src="/js/plugins/owl/owl.carousel.min.js"></script>
+	<script src="/js/plugins/owl/owl-setting.js"></script>
+	<link rel="stylesheet" href="/js/plugins/owl/owl.carousel.min.css">
+	<link rel="stylesheet" href="/js/plugins/owl/owl.theme.default.min.css">
+
+{% endblock %}

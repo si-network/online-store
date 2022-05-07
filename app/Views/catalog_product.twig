@@ -1,0 +1,25 @@
+<a href="/products/{{ product.getId }}">
+	<div class="hit__item">
+		<div class="item__img">
+			{% if product.getDiscount %}
+			<div class="item__sale_logo">СКИДКА {{ product.getDiscount }}%</div>
+			{% endif %}
+			<img src="/images/catalog/products/{{ product.getId }}/main.png" alt="">
+		</div>
+		<div class="hit__service item__service">
+			<div class="hit__about item__about">{{ product.getTitle }}</div>
+			<div class="item__quantity">Осталось: {{ product.getQuantity }}</div>
+			<div class="hit__footer item__footer">
+				<div class="hit__price item__price {{ product.getDiscount ? 'hit__price_sale' : '' }}">{{ product.getPrice }}р.</div>
+				<div class="hit__comment">
+					<span>{{ product.getCountComments }}</span>
+					<i class="fa fa-commenting" aria-hidden="true" style="color: #A0A0A0"></i>
+				</div>
+				<div class="hit__rating">
+					<span>{{ product.getRating }}</span>
+					<i class="fa fa-star" aria-hidden="true" style="color: #FFB266"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</a>

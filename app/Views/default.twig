@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %}</title>
+	{% block styles %}
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css">
+	{% endblock %}
+	{% block scriptsStart %}
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	<script src="/js/default.js"></script>
+	{% endblock %}
+
+</head>
+<body>
+	<noscript><p>Необходимо включить Javascript или обновить браузер до последней версии.</p></noscript>
+	{% block wrapper %}
+		{% block header %}
+			{% include 'header.twig' %}
+		{% endblock %}
+		{% block content_wrapper %}
+			<div class="content_wrapper">
+				{% include 'navigation.twig' %}
+				<div class="content">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		{% endblock %}
+		{% block footer %}
+			{% include 'footer.twig' %}
+		{% endblock %}
+		{% block scripts %}
+		{% endblock %}
+	{% endblock %}
+</body>
+</html>

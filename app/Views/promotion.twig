@@ -1,0 +1,24 @@
+{% extends "default.twig" %}
+
+{% block styles %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/css/promotion.css">
+{% endblock %}
+
+{% block title %}{{ promotion.getTitle }}{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="promotion_wrapper">
+			<h2 class="promotion_title">{{ promotion.getTitle }} {{ promotion.getTitleAddition }}</h2>
+			<div class="promotion_img">
+				<img src="{{ promotion.getImagePath }}" alt="">
+			</div>
+			<div class="promotion_content">{{ promotion.getDescription }}</div>
+			<div class="promotion_period">
+				<div>Период проведения акции:</div>&nbsp;  
+				<div>{{ promotion.getDateFrom }} - {{ promotion.getDateTo }}</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
