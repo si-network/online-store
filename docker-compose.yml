@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+    php:
+        image: sinetwork/web-server:1
+
+        container_name: web_srv
+
+        links:
+            - mysql
+
+        ports:
+            - "80:80"
+
+    mysql:
+        image: sinetwork/mysql:1
+
+        container_name: mysql_srv
+        
+        ports:
+            - "3306:3306"
+
+        environment:
+            MYSQL_ROOT_PASSWORD: 777777
