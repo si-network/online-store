@@ -12,7 +12,7 @@ return [
     'db' => [
         'driver'    => 'mysql',
         'dbname'    => 'store_db',
-        'host'      => '10.99.86.89',
+        'host'      => 'mysql_srv',
         'port'      => '3306',
         'user'      => 'root',
         'password'  => '777777',
